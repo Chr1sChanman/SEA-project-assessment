@@ -1,30 +1,13 @@
-/**
- * Data Catalog Project Starter Code - SEA Stage 2
- *
- * This file is where you should be doing most of your work. You should
- * also make changes to the HTML and CSS files, but we want you to prioritize
- * demonstrating your understanding of data structures, and you'll do that
- * with the JavaScript code you write in this file.
- *
- * The comments in this file are only to help you learn how the starter code
- * works. The instructions for the project are in the README. That said, here
- * are the three things you should do first to learn about the starter code:
- * - 1 - Change something small in index.html or style.css, then reload your
- *    browser and make sure you can see that change.
- * - 2 - On your browser, right click anywhere on the page and select
- *    "Inspect" to open the browser developer tools. Then, go to the "console"
- *    tab in the new window that opened up. This console is where you will see
- *    JavaScript errors and logs, which is extremely helpful for debugging.
- *    (These instructions assume you're using Chrome, opening developer tools
- *    may be different on other browsers. We suggest using Chrome.)
- * - 3 - Add another string to the titles array a few lines down. Reload your
- *    browser and observe what happens. You should see a fourth "card" appear
- *    with the string you added to the array, but a broken image.
- *
- */
-// To test website locally use cmd python -m http.server on a python based conda env
-// Then open the link: http://localhost:8000
-// Look into using Github Pages later on
+/*
+- Most work should be done in this file, polish through HTML and CSS is less important
+- To test website locally:
+  1. use cmd python -m http.server on a python based conda env
+  2. Then open the link: http://localhost:8000
+- Look into using Github Pages later on to preview the page
+- Use 'Inspect element' on page to see console for js errors and logs which is helpful for debugging
+  - Advised to use Chome for console and debugging
+*/
+
 const FRESH_PRINCE_URL =
   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
 const CURB_POSTER_URL =
@@ -37,6 +20,7 @@ let titles = [
   "Fresh Prince of Bel Air",
   "Curb Your Enthusiasm",
   "East Los High",
+  "Test String"
 ];
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.

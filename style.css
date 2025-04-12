@@ -1,4 +1,5 @@
 /* Comments in CSS are similar to block comments in C/C++ */
+/* CSS determines the look and positioning of the elements structrued by HTML*/
 html,
 body {
   margin: 0;
