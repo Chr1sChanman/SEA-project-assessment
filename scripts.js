@@ -22,7 +22,9 @@
  *    with the string you added to the array, but a broken image.
  *
  */
-// Test comment
+// To test website locally use cmd python -m http.server on a python based conda env
+// Then open the link: http://localhost:8000
+// Look into using Github Pages later on
 const FRESH_PRINCE_URL =
   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
 const CURB_POSTER_URL =
