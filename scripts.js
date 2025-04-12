@@ -86,6 +86,7 @@ function editCardContent(card, newTitle, newImageURL) {
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
 
+// Console is located in 'Inspect Element'
 function quoteAlert() {
   console.log("Button Clicked!");
   alert(
