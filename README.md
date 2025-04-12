@@ -7,7 +7,7 @@ Markdown Syntax
 Example linking text (has to be exact title?)
 ### Test link
 
-[Test link](#-test-link)
+[Test link](#test-link)
 
 # SEA Stage 2 - Data Catalog Project
 
@@ -20,7 +20,7 @@ This repository contains the instructions, requirements, and starter code for St
 - [Your Task](#your-task)
 - [Requirements](#requirements---your-catalog-website-should)
 - [Getting Started](#getting-started)
-- [🚀 Submitting](#submitting)
+- [🚀 Submitting](#-submitting)
 - [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-faq)
 
 ---
