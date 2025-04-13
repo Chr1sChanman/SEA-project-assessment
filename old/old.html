@@ -1,0 +1,52 @@
+<!--HTML provides the structure and organization of the page-->
+<!DOCTYPE html>                                                                 <!--Declares doc type as HTML5-->
+<html>                                                                          <!--Root element-->
+  <head>                                                                        <!--Contains meta information about HTML document (not displayed on actual page)-->
+    <title>LA TV Shows | Home</title>                                           <!--Title shown in browser tab-->
+    <meta name="description" content="A Catalog of Shows Set in Los Angeles" /> <!--Description used by search engines-->
+    <link rel="stylesheet" href="old.css" />                                  <!--Links the style.css file to apply style to HTML-->
+    <script type="text/javascript" src="old.js"></script>                   <!--Links the js to apply interactivity-->
+  </head>
+
+  <body>                                                                        <!--Contains the visible content of webpage-->
+    <header class="main-header">                                                <!--This <> section displays the website title-->
+      <h1 class="title">LA TV Shows</h1>
+    </header>
+    <div id="card-container"></div>                                             <!--Container where the cards are displayed-->
+    <div class="card" style="display: none">                                    <!--Template card hidden by default using inlin CSS ('style="display: none')-->
+      <div class="card-content">                                                <!--Inner container within 'card-container', references 'card-content' for styling-->
+        <h2>TV Show Title</h2>
+        <img src="" alt="TV Show Poster" />
+        <ul>
+          <li>Bullet Point 1</li>
+          <li>Bullet Point 2</li>
+          <li>Bullet Point 3</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      <button onclick="quoteAlert();">Get A Quote!</button>
+      <button onclick="removeLastCard();">Remove A Card!</button>
+    </div>
+  </body>
+</html>
+
+<!--
+Notes relavent to the file
+
+Structuring Content/General Container
+  <div>: Content division element
+
+Document Structure
+  <html>: Root element of entire page
+  <head>: Contains the meta information not displayed on page
+  <body>: Contains the visible content displayed on page
+
+Headings
+  <h1> to <h6>: Heirarchial headings (h1 being most important, h6 being the least)
+  
+Lists
+  <ul>: Unordered list (bullets)
+  <ol>: Ordered list (numbers)
+  <li>: List item used inside <ul> or <ol>
+-->

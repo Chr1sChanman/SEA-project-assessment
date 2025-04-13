@@ -1,3 +1,13 @@
+/*
+- Most work should be done in this file, polish through HTML and CSS is less important
+- To test website locally:
+  1. use cmd python -m http.server on a python based conda env
+  2. Then open the link: http://localhost:8000
+- Look into using Github Pages later on to preview the page
+- Use 'Inspect element' on page to see console for js errors and logs which is helpful for debugging
+  - Advised to use Chome for console and debugging
+*/
+
 const FRESH_PRINCE_URL =
   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
 const CURB_POSTER_URL =
