@@ -1,0 +1,112 @@
+[
+    {
+      "name": "Belmont Shore",
+      "safetyRating": 6,
+      "crimeRate": {
+        "violentCrime": 3,
+        "propeprtyCrime": 6,
+        "overallCrime": 5
+      },
+    "mainCrimeType": "Theft, particulary from vehicles",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Belmont_Shore_and_Belmont_Heights_in_Long_Beach_California.JPG"
+    },
+    {
+        "name": "Hellman",
+        "safetyRating": 1,
+        "crimeRate": {
+          "violentCrime": 9,
+          "propeprtyCrime": 8,
+          "overallCrime": 9
+        },
+        "mainCrimeType": "Assult and Theft",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Hellman_Neighborhood_Long_Beach_California.JPG"
+      },
+      {
+        "name": "Alamitos Beach",
+        "safetyRating": 4,
+        "crimeRate": {
+          "violentCrime": 5,
+          "propeprtyCrime": 7,
+          "overallCrime": 6
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Alamitos_Beach_Long_Beach_California.jpg"
+      },
+      {
+        "name": "Bluff Park",
+        "safetyRating": 8,
+        "crimeRate": {
+          "violentCrime": 1,
+          "propeprtyCrime": 2,
+          "overallCrime": 2
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Bluff_Park_and_Bluff_Heights_Long_Beach_California_looking_SW.JPG"
+      },
+      {
+        "name": "Cambodia Town",
+        "safetyRating": 4,
+        "crimeRate": {
+          "violentCrime": 6,
+          "propeprtyCrime": 7,
+          "overallCrime": 7
+        },
+        "mainCrimeType": "Property crime",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Latino-Cambodian_Business_Corrdidor.jpg"
+      },
+      {
+        "name": "Downtown Long Beach",
+        "safetyRating": 3,
+        "crimeRate": {
+          "violentCrime": 6,
+          "propeprtyCrime": 7,
+          "overallCrime": 7
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Downtown_Long_Beach_California_Aerial.jpg"
+      },
+      {
+        "name": "California State University Long Beach",
+        "safetyRating": 6,
+        "crimeRate": {
+          "violentCrime": 2,
+          "propeprtyCrime": 5,
+          "overallCrime": 4
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Walter_Pyramid.jpg"
+      },
+      {
+        "name": "Naples",
+        "safetyRating": 7,
+        "crimeRate": {
+          "violentCrime": 2,
+          "propeprtyCrime": 4,
+          "overallCrime": 3
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Belmont_Park-Naples-Peninsula_Long_Beach_California.JPG"
+      },
+      {
+        "name": "Peninsula",
+        "safetyRating": 8,
+        "crimeRate": {
+          "violentCrime": 1,
+          "propeprtyCrime": 3,
+          "overallCrime": 2
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Breakwater_break1_new%28USGS%29.jpg"
+      },
+      {
+        "name": "Rose Park",
+        "safetyRating": 4,
+        "crimeRate": {
+          "violentCrime": 6,
+          "propeprtyCrime": 7,
+          "overallCrime": 6
+        },
+        "mainCrimeType": "Theft and Larceny",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rose_Park%2C_Long_Beach_airview.jpg"
+      }
+  ]
