@@ -69,3 +69,10 @@ Extensions used: ESLint, GitLens, JavaScript (ES6) code snippets, Live Server
    - To Close:
       - Press in sequence: CMD+L then CMD+C
       - CMD+Shift+P and type "Live Server: Stop Live Server"
+
+Websites used:
+- https://en.wikipedia.org/wiki/Neighborhoods_of_Long_Beach,_California
+- https://www.neighborhoodscout.com/ca/long-beach/crime#description
+- https://crimegrade.org/violent-crime-long-beach-ca/
+- https://www.longbeach.gov/police/crime-info/crime-statistics/
+- https://www.longbeach.gov/police/crime-info/crime-incidents/
