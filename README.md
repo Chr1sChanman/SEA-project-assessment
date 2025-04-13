@@ -4,8 +4,6 @@
 
 [Markdown Syntax](#markdown-syntax)
 
-
-
 [Personal Notes/Comments](#personal-notescomments)
 
 ---
