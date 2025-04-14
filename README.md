@@ -6,6 +6,8 @@
 
 [Personal Notes/Comments](#personal-notescomments)
 
+[To do tasks](#to-do-tasks)
+
 ---
 
 # Project Contraints
@@ -82,3 +84,5 @@ Websites used:
 - Center title text on cards
 - Add box in white space explaining source accuracy and usage (Ex: hyperlinks to Long Beach Crime Report)
 - Documentation of code and polish of HTML
+- Add a sort/filter function to the cards
+    - This feature depends on if there is time
