@@ -40,7 +40,7 @@ const originalNeighborhoodData = [
       "propertyCrime": 8,
       "overallCrime": 9
     },
-    "mainCrimeType": "Assault and Theft", // Corrected typo: Assult -> Assault
+    "mainCrimeType": "Assault and Theft", 
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Hellman_Neighborhood_Long_Beach_California.JPG"
   },
   {
@@ -124,8 +124,6 @@ function showCards() {
       return; 
   }
 
-
-  // Loop through the *displayed* data
   for (let i = 0; i < displayedNeighborhoodData.length; i++) {
     let neighborhood = displayedNeighborhoodData[i];
 
@@ -151,7 +149,6 @@ function editCardContent(card, neighborhood) {
       console.warn("Card image (img) not found in template for:", neighborhood.name);
   }
 
-
   const cardList = card.querySelector("ul");
   if (cardList) {
       cardList.innerHTML = ""; 
@@ -165,7 +162,6 @@ function editCardContent(card, neighborhood) {
       cardList.appendChild(oCrimeList);
 
       const vCrimeList = document.createElement("li");
-      // Fixed typo: Violet -> Violent
       vCrimeList.textContent = `Violent Crime: ${neighborhood.crimeRate.violentCrime}/10`;
       cardList.appendChild(vCrimeList);
 
@@ -191,7 +187,6 @@ function quoteAlert() {
 }
 
 function removeLastCard() {
-  // Operate on the displayed data array
   if (displayedNeighborhoodData.length > 0) {
     displayedNeighborhoodData.pop();
     showCards();
