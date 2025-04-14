@@ -75,7 +75,10 @@ Websites used:
 - https://www.longbeach.gov/police/crime-info/crime-statistics/
 - https://www.longbeach.gov/police/crime-info/crime-incidents/
 
+---
 
-center title text
-add source verification in white space (la county crime report (use hyperlinks))
-add documentation/polish
+# To do tasks
+
+- Center title text on cards
+- Add box in white space explaining source accuracy and usage (Ex: hyperlinks to Long Beach Crime Report)
+- Documentation of code and polish of HTML
