@@ -3,6 +3,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Verdana", sans-serif;
 }
 
 .main-header {
