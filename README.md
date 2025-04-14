@@ -74,3 +74,8 @@ Websites used:
 - https://crimegrade.org/violent-crime-long-beach-ca/
 - https://www.longbeach.gov/police/crime-info/crime-statistics/
 - https://www.longbeach.gov/police/crime-info/crime-incidents/
+
+
+center title text
+add source verification in white space (la county crime report (use hyperlinks))
+add documentation/polish

@@ -3,24 +3,18 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden;
   font-family: "Verdana", sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+  min-height: 100vh;
 }
 
 .main-header {
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  height: 100px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 .title {
@@ -30,11 +24,11 @@ body {
   font-family: "Helvetica";
   font-weight: normal;
   color: white;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #card-container {
-  margin-top: 80px;
-  margin-bottom: 60px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;

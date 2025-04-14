@@ -1,4 +1,15 @@
-const neighborhoodData = [
+const originalNeighborhoodData = [
+  {
+    "name": "CSU Long Beach",
+    "safetyRating": 6,
+    "crimeRate": {
+      "violentCrime": 2,
+      "propertyCrime": 5,
+      "overallCrime": 4
+    },
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Walter_Pyramid.jpg"
+  },
   {
     "name": "Belmont Shore",
     "safetyRating": 6,
@@ -7,177 +18,248 @@ const neighborhoodData = [
       "propertyCrime": 6,
       "overallCrime": 5
     },
-  "mainCrimeType": "Theft, particulary from vehicles",
+    "mainCrimeType": "Theft, particularly from vehicles",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Belmont_Shore_and_Belmont_Heights_in_Long_Beach_California.JPG"
   },
   {
-      "name": "Hellman",
-      "safetyRating": 1,
-      "crimeRate": {
-        "violentCrime": 9,
-        "propertyCrime": 8,
-        "overallCrime": 9
-      },
-      "mainCrimeType": "Assult and Theft",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Hellman_Neighborhood_Long_Beach_California.JPG"
+    "name": "Rose Park",
+    "safetyRating": 4,
+    "crimeRate": {
+      "violentCrime": 6,
+      "propertyCrime": 7,
+      "overallCrime": 6
     },
-    {
-      "name": "Alamitos Beach",
-      "safetyRating": 4,
-      "crimeRate": {
-        "violentCrime": 5,
-        "propertyCrime": 7,
-        "overallCrime": 6
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Alamitos_Beach_Long_Beach_California.jpg"
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rose_Park%2C_Long_Beach_airview.jpg"
+  },
+  {
+    "name": "Hellman",
+    "safetyRating": 1,
+    "crimeRate": {
+      "violentCrime": 9,
+      "propertyCrime": 8,
+      "overallCrime": 9
     },
-    {
-      "name": "Bluff Park",
-      "safetyRating": 8,
-      "crimeRate": {
-        "violentCrime": 1,
-        "propertyCrime": 2,
-        "overallCrime": 2
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Bluff_Park_and_Bluff_Heights_Long_Beach_California_looking_SW.JPG"
+    "mainCrimeType": "Assault and Theft", // Corrected typo: Assult -> Assault
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Hellman_Neighborhood_Long_Beach_California.JPG"
+  },
+  {
+    "name": "Peninsula",
+    "safetyRating": 8,
+    "crimeRate": {
+      "violentCrime": 1,
+      "propertyCrime": 3,
+      "overallCrime": 2
     },
-    {
-      "name": "Cambodia Town",
-      "safetyRating": 4,
-      "crimeRate": {
-        "violentCrime": 6,
-        "propertyCrime": 7,
-        "overallCrime": 7
-      },
-      "mainCrimeType": "Property crime",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Latino-Cambodian_Business_Corrdidor.jpg"
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Breakwater_break1_new%28USGS%29.jpg"
+  },
+  {
+    "name": "Alamitos Beach",
+    "safetyRating": 4,
+    "crimeRate": {
+      "violentCrime": 5,
+      "propertyCrime": 7,
+      "overallCrime": 6
     },
-    {
-      "name": "Downtown Long Beach",
-      "safetyRating": 3,
-      "crimeRate": {
-        "violentCrime": 6,
-        "propertyCrime": 7,
-        "overallCrime": 7
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Downtown_Long_Beach_California_Aerial.jpg"
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Alamitos_Beach_Long_Beach_California.jpg"
+  },
+  {
+    "name": "Bluff Park",
+    "safetyRating": 8,
+    "crimeRate": {
+      "violentCrime": 1,
+      "propertyCrime": 2,
+      "overallCrime": 2
     },
-    {
-      "name": "California State University Long Beach",
-      "safetyRating": 6,
-      "crimeRate": {
-        "violentCrime": 2,
-        "propertyCrime": 5,
-        "overallCrime": 4
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Walter_Pyramid.jpg"
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Bluff_Park_and_Bluff_Heights_Long_Beach_California_looking_SW.JPG"
+  },
+  {
+    "name": "Cambodia Town",
+    "safetyRating": 4,
+    "crimeRate": {
+      "violentCrime": 6,
+      "propertyCrime": 7,
+      "overallCrime": 7
     },
-    {
-      "name": "Naples",
-      "safetyRating": 7,
-      "crimeRate": {
-        "violentCrime": 2,
-        "propertyCrime": 4,
-        "overallCrime": 3
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Belmont_Park-Naples-Peninsula_Long_Beach_California.JPG"
+    "mainCrimeType": "Property crime",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Latino-Cambodian_Business_Corrdidor.jpg"
+  },
+  {
+    "name": "Willmore",
+    "safetyRating": 3,
+    "crimeRate": {
+      "violentCrime": 6,
+      "propertyCrime": 7,
+      "overallCrime": 7
     },
-    {
-      "name": "Peninsula",
-      "safetyRating": 8,
-      "crimeRate": {
-        "violentCrime": 1,
-        "propertyCrime": 3,
-        "overallCrime": 2
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/db/Breakwater_break1_new%28USGS%29.jpg"
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Downtown_Long_Beach_California_Aerial.jpg"
+  },
+  {
+    "name": "Naples",
+    "safetyRating": 7,
+    "crimeRate": {
+      "violentCrime": 2,
+      "propertyCrime": 4,
+      "overallCrime": 3
     },
-    {
-      "name": "Rose Park",
-      "safetyRating": 4,
-      "crimeRate": {
-        "violentCrime": 6,
-        "propertyCrime": 7,
-        "overallCrime": 6
-      },
-      "mainCrimeType": "Theft and Larceny",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Rose_Park%2C_Long_Beach_airview.jpg"
-    }
-]
+    "mainCrimeType": "Theft and Larceny",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Belmont_Park-Naples-Peninsula_Long_Beach_California.JPG"
+  }
+];
 
-// This function adds cards the page to display the data in the array
+let displayedNeighborhoodData = [...originalNeighborhoodData];
+
 function showCards() {
   const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = "";
+  cardContainer.innerHTML = ""; 
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < neighborhoodData.length; i++) {
-    let neighborhood = neighborhoodData[i];
+  if (!templateCard) {
+      console.error("Template card element with class '.card' not found!");
+      cardContainer.innerHTML = "<p>Error: Card template not found.</p>";
+      return; 
+  }
 
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, neighborhood); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
+
+  // Loop through the *displayed* data
+  for (let i = 0; i < displayedNeighborhoodData.length; i++) {
+    let neighborhood = displayedNeighborhoodData[i];
+
+    const nextCard = templateCard.cloneNode(true); 
+    editCardContent(nextCard, neighborhood); 
+    cardContainer.appendChild(nextCard); 
   }
 }
 
 function editCardContent(card, neighborhood) {
-  card.style.display = "block";
+  card.style.display = "block"; 
 
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = neighborhood.name;
+  if (cardHeader) cardHeader.textContent = neighborhood.name;
+  else console.warn("Card header (h2) not found in template for:", neighborhood.name);
+
 
   const cardImage = card.querySelector("img");
-  cardImage.src = neighborhood.imageUrl;
-  cardImage.alt = neighborhood.name + " Image";
+  if (cardImage) {
+      cardImage.src = neighborhood.imageUrl;
+      cardImage.alt = neighborhood.name + " Image";
+  } else {
+      console.warn("Card image (img) not found in template for:", neighborhood.name);
+  }
+
 
   const cardList = card.querySelector("ul");
-  cardList.innerHTML = "";
+  if (cardList) {
+      cardList.innerHTML = ""; 
 
-  const safetyRate = document.createElement("li");
-  safetyRate.textContent = `Safety Rating: ${neighborhood.safetyRating}/10`;
-  cardList.appendChild(safetyRate);
+      const safetyRate = document.createElement("li");
+      safetyRate.textContent = `Safety Rating: ${neighborhood.safetyRating}/10`;
+      cardList.appendChild(safetyRate);
 
-  const oCrimeList = document.createElement("li");
-  oCrimeList.textContent = `Overall Crime: ${neighborhood.crimeRate.overallCrime}/10`;
-  cardList.appendChild(oCrimeList);
+      const oCrimeList = document.createElement("li");
+      oCrimeList.textContent = `Overall Crime: ${neighborhood.crimeRate.overallCrime}/10`;
+      cardList.appendChild(oCrimeList);
 
-  const vCrimeList = document.createElement("li");
-  vCrimeList.textContent = `Violet Crime: ${neighborhood.crimeRate.violentCrime}/10`;
-  cardList.appendChild(vCrimeList);
+      const vCrimeList = document.createElement("li");
+      // Fixed typo: Violet -> Violent
+      vCrimeList.textContent = `Violent Crime: ${neighborhood.crimeRate.violentCrime}/10`;
+      cardList.appendChild(vCrimeList);
 
-  const pCrimeList = document.createElement("li");
-  pCrimeList.textContent = `Property Crime: ${neighborhood.crimeRate.propertyCrime}/10`;
-  cardList.appendChild(pCrimeList);
+      const pCrimeList = document.createElement("li");
+      pCrimeList.textContent = `Property Crime: ${neighborhood.crimeRate.propertyCrime}/10`;
+      cardList.appendChild(pCrimeList);
 
-  const crimeStats = document.createElement("li");
-  crimeStats.textContent = `Main Crime Type: ${neighborhood.mainCrimeType}`;
-  cardList.appendChild(crimeStats);
-
-  console.log("new card:", neighborhood.name, "- html: ", card);
+      const crimeStats = document.createElement("li");
+      crimeStats.textContent = `Main Crime Type: ${neighborhood.mainCrimeType}`;
+      cardList.appendChild(crimeStats);
+  } else {
+      console.warn("Card list (ul) not found in template for:", neighborhood.name);
+  }
 }
 
-// This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
 
-// Console is located in 'Inspect Element'
 function quoteAlert() {
   console.log("Button Clicked!");
   alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!"
+    "It's not cap"
   );
 }
 
 function removeLastCard() {
-  if (neighborhoodData.length > 0) {
-    neighborhoodData.pop();
+  // Operate on the displayed data array
+  if (displayedNeighborhoodData.length > 0) {
+    displayedNeighborhoodData.pop();
     showCards();
+    console.log("Last card removed. Remaining:", displayedNeighborhoodData.length);
   } else {
-    console.log("No cards to remove.");
+    console.log("No cards left to remove.");
+    alert("No more neighborhoods to remove!");
   }
 }
+
+function addNeighborhood() {
+  if (displayedNeighborhoodData.length < originalNeighborhoodData.length) {
+    const nextIndexToAdd = displayedNeighborhoodData.length;
+    const neighborhoodToAdd = originalNeighborhoodData[nextIndexToAdd];
+
+    displayedNeighborhoodData.push(neighborhoodToAdd);
+    console.log("Added back:", neighborhoodToAdd.name);
+    showCards(); 
+  } else {
+    console.log("All original neighborhoods shown. Prompting for a new one.");
+    alert("All original neighborhoods are displayed, adding new one.");
+
+    const newName = prompt("Enter new neighborhood name:");
+    if (newName === null || newName.trim() === "") {
+        alert("Adding new neighborhood cancelled or name is empty.");
+        return; 
+    }
+
+    const safetyRating = parseInt(prompt(`Enter safety rating for ${newName} (1-10):`), 10);
+    const violentCrime = parseInt(prompt(`Enter violent crime rate for ${newName} (1-10):`), 10);
+    const propertyCrime = parseInt(prompt(`Enter property crime rate for ${newName} (1-10):`), 10);
+    const overallCrime = parseInt(prompt(`Enter overall crime rate for ${newName} (1-10):`), 10);
+    const mainCrimeType = prompt(`Enter main crime type for ${newName}:`);
+    const imageUrl = prompt(`Enter image URL for ${newName} (leave blank for default):`);
+
+    if (isNaN(safetyRating) || isNaN(violentCrime) || isNaN(propertyCrime) || isNaN(overallCrime)) {
+        alert("Invalid number entered for ratings/crime rates. Adding cancelled.");
+        return;
+    }
+
+    const newNeighborhood = {
+      name: newName,
+      safetyRating: safetyRating || 0,
+      crimeRate: {
+        violentCrime: violentCrime || 0,
+        propertyCrime: propertyCrime || 0,
+        overallCrime: overallCrime || 0,
+      },
+      mainCrimeType: mainCrimeType || "Unknown",
+      imageUrl: imageUrl || "https://via.placeholder.com/300x200?text=No+Image",
+    };
+
+    originalNeighborhoodData.push(newNeighborhood);
+    displayedNeighborhoodData.push(newNeighborhood);
+
+    console.log("Added new neighborhood:", newNeighborhood.name);
+    showCards();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const removeButton = document.getElementById('remove-card-button'); 
+    const addButton = document.getElementById('add-card-button'); 
+    const quoteButton = document.getElementById('quote-button'); 
+
+    if (removeButton) removeButton.addEventListener('click', removeLastCard);
+    if (addButton) addButton.addEventListener('click', addNeighborhood);
+    if (quoteButton) quoteButton.addEventListener('click', quoteAlert);
+
+    showCards();
+});
