@@ -3,18 +3,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Verdana", sans-serif;
-  box-sizing: border-box;
-  margin-bottom: 60px;
-  min-height: 100vh;
 }
 
 .main-header {
   background-color: rgba(0, 0, 0, 0.8);
   padding-bottom: 10px;
-  padding-top: 10px;
-  box-sizing: border-box;
-
 }
 
 .title {
@@ -24,29 +17,33 @@ body {
   font-family: "Helvetica";
   font-weight: normal;
   color: white;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 #card-container {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 20px 10px;
-  box-sizing: border-box;
+  overflow-x: auto;     /* Allows horizontal scrolling within card-container so that title doesn't move out of view */
+  padding: 20px;
 }
 
 .card {
   width: 300px;
-  flex-shrink: 0;
+  flex-shrink: 0;       /* Prevents cards from squeezing to fit page */
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px;
+  margin: 10px;         /* Spaces the cards (nice asthetic) */
   background-color: white;
 }
 
+/* Neighborhood Title */
+.card-content {
+  padding: 10px;
+  font-family: "Verdana", sans-serif;
+  color: #555;
+  text-align: center;
+}
+
+/* Neighborhood Image */
 .card img {
   width: 100%;
   height: 180px;
@@ -54,34 +51,30 @@ body {
   display: block;
 }
 
-.card-content {
-  padding: 10px;
-  font-family: "Verdana", sans-serif;
-  color: #555;
-}
-
+/* Overarching structure for stats */
 .card-content ul {
   list-style: none;
   padding: 10px;
   margin: 0;
   font-size: 14px;
+  text-align: left;
 }
 
+/* Underlying structure for stats */
 .card-content li {
-  margin-bottom: 5px;
+  margin: 10px;
 }
 
+/* Made changes in footer to act more as a nav bar rather than a static element */
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px;
-  position: fixed;
+  position: fixed;                          /* Fixes position at bottom */
   bottom: 0;
-  left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 10;                              /* Ensures bottom bar is always on the page */
   height: 60px;
   box-sizing: border-box;
 }

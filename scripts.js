@@ -1,3 +1,4 @@
+// Unchanging data, increased from previous list of strings
 const originalNeighborhoodData = [
   {
     "name": "CSU Long Beach",
@@ -111,36 +112,42 @@ const originalNeighborhoodData = [
   }
 ];
 
+// "Shallow copying" original array to use dynamically, similar to Python's []
 let displayedNeighborhoodData = [...originalNeighborhoodData];
 
+// Function to display cards on page like original js
 function showCards() {
-  const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = ""; 
-  const templateCard = document.querySelector(".card");
+  const cardContainer = document.getElementById("card-container");    // Accesses HTML element to edit
+  cardContainer.innerHTML = "";                                       // Clears out template content in card-container
+  const templateCard = document.querySelector(".card");               // Accesses HTML element .card to be copied for each neighborhood
 
+  // Edge case to make sure the template card exists, error message displays both on page and console
   if (!templateCard) {
-      console.error("Template card element with class '.card' not found!");
+      console.error("Template card element with class '.card' not found.");
       cardContainer.innerHTML = "<p>Error: Card template not found.</p>";
       return; 
   }
 
+  // Looping through displayed array
   for (let i = 0; i < displayedNeighborhoodData.length; i++) {
     let neighborhood = displayedNeighborhoodData[i];
 
-    const nextCard = templateCard.cloneNode(true); 
-    editCardContent(nextCard, neighborhood); 
-    cardContainer.appendChild(nextCard); 
+    const nextCard = templateCard.cloneNode(true);    // Copies template card for each neighborhood
+    editCardContent(nextCard, neighborhood);          // Call to function editCardContent
+    cardContainer.appendChild(nextCard);              // Adds the card as a child element in card-container to be displayed
   }
 }
 
+// Function similar to original js, callling to HTML element and object data for a neighborhood to display
 function editCardContent(card, neighborhood) {
-  card.style.display = "block"; 
+  card.style.display = "block";   // To ensure card is visible
 
+  // Check to make sure HTML structure contains the header for neighborhood name
   const cardHeader = card.querySelector("h2");
   if (cardHeader) cardHeader.textContent = neighborhood.name;
   else console.warn("Card header (h2) not found in template for:", neighborhood.name);
 
-
+  // Same as above but for the image instead
   const cardImage = card.querySelector("img");
   if (cardImage) {
       cardImage.src = neighborhood.imageUrl;
@@ -149,6 +156,8 @@ function editCardContent(card, neighborhood) {
       console.warn("Card image (img) not found in template for:", neighborhood.name);
   }
 
+  // Same check as previous two but for the statistics portion of the HTML
+  // Altered portion of original js code to make bullet points functional
   const cardList = card.querySelector("ul");
   if (cardList) {
       cardList.innerHTML = ""; 
@@ -177,84 +186,86 @@ function editCardContent(card, neighborhood) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", showCards);
-
-function quoteAlert() {
-  console.log("Button Clicked!");
+// Slight modification of original 'getQuote' button to show set statistics about crime
+function getStatistics() {
+  console.log("Button Clicked.");
   alert(
-    "It's not cap"
+    "There are no areas where violent crime exceeds property crime (which is a good thing).\n\nThe neighborhoods with the highest rates of violent crime are as follows: Downtown Long Beach, Wilington, Poly High District, and Wrigley"
   );
 }
 
-function removeLastCard() {
+// Modification of removeLastCard() to account for dynamic array
+function removeNeighborhood() {
   if (displayedNeighborhoodData.length > 0) {
     displayedNeighborhoodData.pop();
     showCards();
     console.log("Last card removed. Remaining:", displayedNeighborhoodData.length);
   } else {
     console.log("No cards left to remove.");
-    alert("No more neighborhoods to remove!");
+    alert("No more neighborhoods to remove.");
   }
 }
 
+// Function to add existing or new neighborhoods
 function addNeighborhood() {
   if (displayedNeighborhoodData.length < originalNeighborhoodData.length) {
-    const nextIndexToAdd = displayedNeighborhoodData.length;
-    const neighborhoodToAdd = originalNeighborhoodData[nextIndexToAdd];
+    const nextIndexToAdd = displayedNeighborhoodData.length;                  // Takes array length of displayed array
+    const neighborhoodToAdd = originalNeighborhoodData[nextIndexToAdd];       // Returns index of original array to be added according to displayed array length
 
+    // Adds back and logs neighborhood from array that was added back
     displayedNeighborhoodData.push(neighborhoodToAdd);
     console.log("Added back:", neighborhoodToAdd.name);
     showCards(); 
-  } else {
-    console.log("All original neighborhoods shown. Prompting for a new one.");
-    alert("All original neighborhoods are displayed, adding new one.");
+  } else {  // Condition where if all neighborhoods from original list was added, user can create a new one
+    console.log("All original neighborhoods currently displayed. Adding new neighborhood.");
+    const wantsToAdd = window.confirm("All original neighborhoods are displayed. Add a neighborhood?"); 
 
-    const newName = prompt("Enter new neighborhood name:");
-    if (newName === null || newName.trim() === "") {
-        alert("Adding new neighborhood cancelled or name is empty.");
-        return; 
+    // Code for prompting user to enter information about new neighborhood if adding one
+    if (wantsToAdd) {
+      console.log("Adding a new neighborhood.");
+      const newName = prompt("Enter new neighborhood name:");
+      if (newName === null || newName.trim() === "") {
+          alert("Adding new neighborhood cancelled or name is empty.");
+          return;
+      }
+
+      const safetyRating = parseInt(prompt(`Enter safety rating for ${newName} (1-10):`), 10);
+      const violentCrime = parseInt(prompt(`Enter violent crime rate for ${newName} (1-10):`), 10);
+      const propertyCrime = parseInt(prompt(`Enter property crime rate for ${newName} (1-10):`), 10);
+      const overallCrime = parseInt(prompt(`Enter overall crime rate for ${newName} (1-10):`), 10);
+      const mainCrimeType = prompt(`Enter main crime type for ${newName}:`);
+      const imageUrl = prompt(`Enter image URL for ${newName} (leave blank for default):`);
+
+      if (isNaN(safetyRating) || isNaN(violentCrime) || isNaN(propertyCrime) || isNaN(overallCrime)) {
+          alert("Invalid number entered for ratings/crime rates. Adding cancelled.");
+          return; 
+      }
+
+      // Mainly a check for mainCrimeType and imageUrl if inputs were left empty to allow placeholder values
+      const newNeighborhood = {
+        name: newName,
+        safetyRating: safetyRating || 0,
+        crimeRate: {
+          violentCrime: violentCrime || 0,
+          propertyCrime: propertyCrime || 0,
+          overallCrime: overallCrime || 0,
+        },
+        mainCrimeType: mainCrimeType || "Unknown",
+        imageUrl: imageUrl || "https://via.placeholder.com/300x200?text=No+Image",
+      };
+
+      // Pushes new neighborhood to both arrays for the current session to be added and removed according to user
+      originalNeighborhoodData.push(newNeighborhood);
+      displayedNeighborhoodData.push(newNeighborhood);
+
+      console.log("Added new neighborhood:", newNeighborhood.name);
+      showCards();
+
+    } else {
+      console.log("Action cancelled.");
     }
-
-    const safetyRating = parseInt(prompt(`Enter safety rating for ${newName} (1-10):`), 10);
-    const violentCrime = parseInt(prompt(`Enter violent crime rate for ${newName} (1-10):`), 10);
-    const propertyCrime = parseInt(prompt(`Enter property crime rate for ${newName} (1-10):`), 10);
-    const overallCrime = parseInt(prompt(`Enter overall crime rate for ${newName} (1-10):`), 10);
-    const mainCrimeType = prompt(`Enter main crime type for ${newName}:`);
-    const imageUrl = prompt(`Enter image URL for ${newName} (leave blank for default):`);
-
-    if (isNaN(safetyRating) || isNaN(violentCrime) || isNaN(propertyCrime) || isNaN(overallCrime)) {
-        alert("Invalid number entered for ratings/crime rates. Adding cancelled.");
-        return;
-    }
-
-    const newNeighborhood = {
-      name: newName,
-      safetyRating: safetyRating || 0,
-      crimeRate: {
-        violentCrime: violentCrime || 0,
-        propertyCrime: propertyCrime || 0,
-        overallCrime: overallCrime || 0,
-      },
-      mainCrimeType: mainCrimeType || "Unknown",
-      imageUrl: imageUrl || "https://via.placeholder.com/300x200?text=No+Image",
-    };
-
-    originalNeighborhoodData.push(newNeighborhood);
-    displayedNeighborhoodData.push(newNeighborhood);
-
-    console.log("Added new neighborhood:", newNeighborhood.name);
-    showCards();
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const removeButton = document.getElementById('remove-card-button'); 
-    const addButton = document.getElementById('add-card-button'); 
-    const quoteButton = document.getElementById('quote-button'); 
-
-    if (removeButton) removeButton.addEventListener('click', removeLastCard);
-    if (addButton) addButton.addEventListener('click', addNeighborhood);
-    if (quoteButton) quoteButton.addEventListener('click', quoteAlert);
-
-    showCards();
-});
+// Event listener from original js to display card content
+document.addEventListener("DOMContentLoaded", showCards);
