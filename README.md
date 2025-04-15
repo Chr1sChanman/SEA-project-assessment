@@ -6,8 +6,6 @@
 
 [Personal Notes/Comments](#personal-notescomments)
 
-[To do tasks](#to-do-tasks)
-
 ---
 
 # Project Contraints
@@ -76,12 +74,3 @@ Websites used:
 - https://crimegrade.org/violent-crime-long-beach-ca/
 - https://www.longbeach.gov/police/crime-info/crime-statistics/
 - https://www.longbeach.gov/police/crime-info/crime-incidents/
-
----
-
-# To do tasks
-
-- Center title text on cards
-- Add box in white space explaining source accuracy and usage (Ex: hyperlinks to Long Beach Crime Report)
-- Add a sort/filter function to the cards
-    - This feature depends on if there is time

@@ -3,6 +3,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  padding-bottom: 40px;   /* Added padding to the bottom so that footer doesn't cover cards */
 }
 
 .main-header {
