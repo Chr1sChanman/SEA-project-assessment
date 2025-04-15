@@ -49,8 +49,6 @@
 
 ---
 
-
-
 # Personal Notes/Comments
 
 Since I am relatively new to frontend I will probably be adding a lot of documentation/comments to understand the code more
