@@ -19,12 +19,14 @@ body {
   color: white;
 }
 
+/* Area containing cards */
 #card-container {
   display: flex;
   overflow-x: auto;     /* Allows horizontal scrolling within card-container so that title doesn't move out of view */
-  padding: 20px;
+  padding: 10px;
 }
 
+/* Neighborhood card params */
 .card {
   width: 300px;
   flex-shrink: 0;       /* Prevents cards from squeezing to fit page */
@@ -51,10 +53,30 @@ body {
   display: block;
 }
 
+/* Source card title */
+#source-info h2 {
+  margin-top: 0;
+  color: #333;
+  text-align: left;
+  font-size: 2em;
+}
+
+/* Source card information */
+#source-info {
+  width: 400px;
+  padding: 10px;
+  margin: auto;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  color: #444;
+  font-size: 14px;
+  text-align: left;
+}
+
 /* Overarching structure for stats */
 .card-content ul {
   list-style: none;
-  padding: 10px;
+  padding: 5px;
   margin: 0;
   font-size: 14px;
   text-align: left;
@@ -62,7 +84,7 @@ body {
 
 /* Underlying structure for stats */
 .card-content li {
-  margin: 10px;
+  margin: 5px;
 }
 
 /* Made changes in footer to act more as a nav bar rather than a static element */
